@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haja</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Animation pour le titre */
+        .animated-title {
+            animation: slideIn 2s ease-in-out forwards, colorChange 1s infinite alternate;
+        }
+
+        /* Animation pour le glissement */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Animation pour le changement de couleur */
+        @keyframes colorChange {
+            0% {
+                color: #007bff; /* Couleur de départ */
+            }
+            100% {
+                color: #28a745; /* Couleur d'arrivée */
+            }
+        }
+
+        /* Styles pour le conteneur principal */
+        .main-container {
+            display: flex; /* Utiliser flexbox pour aligner */
+            justify-content: center; /* Centrer horizontalement */
+            align-items: center; /* Centre verticalement */
+            margin: 20px; /* Ajoute un espacement autour de la section */
+        }
+
+        /* Style pour l'image */
+        .section-image {
+            max-width: 600px; /* Limiter la taille de l'image */
+            height: auto; /* Maintenir le rapport hauteur/largeur */
+            margin-left: 20px; /* Espace entre le texte et l'image */
+        }
+
+        /* Style pour le texte */
+        .text-content {
+            max-width: 400px; /* Limite la largeur du texte */
+            text-align: left; /* Aligne le texte à gauche */
+            font-size: 14px; /* Taille de police plus petite */
+        }
+
+        /* Style pour le bouton */
+        .contact-button {
+            margin-top: 10px; /* Ajoute un espacement au-dessus du bouton */
+            padding: 10px 20px; /* Ajoute du rembourrage au bouton */
+            background-color: #007bff; /* Couleur de fond */
+            color: white; /* Couleur du texte */
+            border: none; /* Pas de bordure */
+            border-radius: 5px; /* Coins arrondis */
+            cursor: pointer; /* Curseur de pointeur */
+            font-size: 14px; /* Taille de la police du bouton */
+        }
+
+        .contact-button:hover {
+            background-color: #0056b3; /* Couleur au survol */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="animated-title">Bienvenue sur le site de HJ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Informatique.html">Informatique</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="text-content">
+            <h2>Présentation</h2>
+            <p>Bonjour, je m'appelle <strong>HJ</strong>. Je suis ici pour vous aider à trouver des solutions d'abonnements <strong>CCcam</strong> et <strong>Newcam</strong> fiables ainsi que des clés <strong>USB 3.0</strong> de haute qualité.</p>
+            <h2>Abonnements CCcam et Newcam</h2>
+            <p>Vous recherchez un abonnement CCcam ou Newcam ? Contactez-moi pour obtenir les meilleures offres ! J'aide à configurer et activer vos abonnements pour que vous puissiez profiter de vos chaînes préférées sans interruptions.</p>
+            <h2>Clés USB 3.0 de haute qualité</h2>
+            <p>Découvrez nos clés USB 3.0 performantes avec différentes capacités :</p>
+            <ul>
+                <li>Clé USB 16 Go</li>
+                <li>Clé USB 32 Go</li>
+                <li>Clé USB 64 Go</li>
+                <li>Clé USB 128 Go</li>
+            </ul>
+            <button class="contact-button" onclick="window.location.href='contact.html'">Contactez-nous vite si vous êtes intéressé !</button>
+        </div>
+        <img src="https://img.freepik.com/photos-gratuite/robot-holding-cell-phone-his-hand-advanced-ai-robot-holding-modern-smartphone_507704-35323.jpg" alt="Robot" class="section-image">
+    </div>
+
+    <footer>
+        <p>© 2024 HJ - boutique en ligne</p>
+    </footer>
+</body>
+</html>
