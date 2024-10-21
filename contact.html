@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Haja</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("rrtemGAFaPqyL8lHz");
+        })();
+
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Tous les champs sont obligatoires.');
+                return false;
+            }
+            
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Veuillez entrer un email valide.');
+                return false;
+            }
+
+            emailjs.send("service_6xjdvw3", "template_8lk5atv", {
+                name: name,
+                email: email,
+                message: message
+            }).then(function(response) {
+                alert("Message envoyé avec succès !");
+                document.getElementById('contactForm').reset();
+            }, function(error) {
+                alert("Erreur d'envoi : " + JSON.stringify(error));
+            });
+
+            return false;
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        label {
+            width: 30%; /* 30% pour le label */
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 70%; /* 70% pour le champ de saisie */
+            padding: 10px;
+            margin-top: 5px;
+            margin-left: 10px; /* Espace entre le label et le champ */
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contactez Haja</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Dites ce que vous voulez dire dans le message ci-dessous!</h2>
+        <form id="contactForm" onsubmit="return validateForm();">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+
+    </section>
+
+    <footer>
+        <p>© 2024 Haja - Portfolio et boutique en ligne</p>
+    </footer>
+</body>
+</html>
